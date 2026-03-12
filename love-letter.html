@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #fae1dd; margin: 0; font-family: 'Arial', sans-serif; }
+        .envelope-wrapper { position: relative; cursor: pointer; }
+        .envelope { position: relative; width: 300px; height: 200px; background-color: #f08080; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .envelope::before { content: ""; position: absolute; top: 0; z-index: 2; border-left: 150px solid transparent; border-right: 150px solid transparent; border-top: 100px solid #f4978e; transform-origin: top; transition: all 0.5s ease-in-out; }
+        .letter { position: absolute; bottom: 10px; left: 10px; width: 280px; height: 180px; background: white; text-align: center; padding: 20px; box-sizing: border-box; transition: all 0.5s ease-in-out; z-index: 1; border-radius: 5px; }
+        .envelope-wrapper.open .envelope::before { transform: rotateX(180deg); z-index: 0; }
+        .envelope-wrapper.open .letter { transform: translateY(-120px); z-index: 2; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h2 { color: #d63031; font-size: 18px; margin-bottom: 10px; }
+        p { font-size: 14px; color: #333; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="envelope-wrapper" onclick="this.classList.toggle('open')">
+        <div class="envelope"></div>
+        <div class="letter">
+            <h2>For My Favorite Person ❤️<br>Peris Mueni Mwongela</h2>
+            <p>Every time I think of you, I smile. <br> You're the best thing that's ever happened to me. <br><b>I love you!</b></p>
+        </div>
+    </div>
+</body>
+</html>
